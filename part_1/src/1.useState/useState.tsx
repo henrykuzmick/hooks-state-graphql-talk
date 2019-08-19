@@ -1,8 +1,18 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
+import React, { useState } from 'react';
+import { Container, Button, Card, CardContent } from '@material-ui/core';
 
-export const UseState = () => (
-  <Button variant="contained" color="primary">
-    Hello World
-  </Button>
-);
+export const UseState = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <Container maxWidth="sm">
+      <Card>
+        <CardContent>
+          <p>Current Count: {count}</p>
+          <Button onClick={() => setCount(count + 1)}>Add One</Button>
+          <Button onClick={() => setCount(count - 1)}>Subtract One</Button>
+        </CardContent>
+      </Card>
+    </Container>
+  );
+};
