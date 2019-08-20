@@ -25,7 +25,7 @@ export const UseMemo = () => {
             () => (
               <div>
                 <Typography variant="body2" color="textSecondary">
-                  Some Name
+                  Some Memoized Name
                 </Typography>
                 <Typography style={{ color: 'white', backgroundColor: color }} gutterBottom variant="h6">
                   {name}
