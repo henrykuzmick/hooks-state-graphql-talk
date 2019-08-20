@@ -3,4 +3,4 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { UseReducer } from './';
 
-storiesOf('Hoks', module).add('2. useReducer', () => <UseReducer />);
+storiesOf('Hooks', module).add('2. useReducer', () => <UseReducer />);
