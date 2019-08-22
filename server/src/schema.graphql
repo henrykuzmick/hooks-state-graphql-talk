@@ -17,6 +17,6 @@ type Query {
 }
 
 type Mutation {
-  createUser(name: String!): User
+  createUser(name: String!, color: ID): User
   createColor(value: String!): Color
 }

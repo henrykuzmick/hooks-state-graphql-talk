@@ -1,5 +1,5 @@
-mutation CreateUser($name: String!) {
-  createUser(name: $name) {
+mutation CreateUser($name: String!, $color: ID) {
+  createUser(name: $name, color: $color) {
     id
     name
     color {

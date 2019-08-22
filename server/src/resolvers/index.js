@@ -35,7 +35,7 @@ export default {
         throw new Error(`Can't create users if u don't have any colors :P`);
       }
 
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      const color = args.color || colors[Math.floor(Math.random() * colors.length)];
 
       const user = new User({
         name: args.name,
