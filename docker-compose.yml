@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:3.4.1
+    ports:
+      - "27017:27017"
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+  api:
+    build:
+      context: ./server
+    volumes:
+      - /usr/src/app/node_modules
+      - ./server:/usr/src/app
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo/hooks-grahql-talk
+  client:
+    build:
+      context: "./client"
+    environment:
+      - TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling
+    volumes:
+      - /usr/src/app/node_modules
+      - ./client:/usr/src/app

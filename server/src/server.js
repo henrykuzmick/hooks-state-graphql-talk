@@ -7,7 +7,7 @@ import schema from './schema';
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI, { useMongoClient: true });
+mongoose.connect(process.env.MONGO_URI);
 
 mongoose.connection
   .once('open', () => {

@@ -30,7 +30,7 @@ export default {
         throw new Error(`Can't create users if u don't have any colors :P`);
       }
 
-      const color = Math.floor(Math.random() * colors.length);
+      const color = colors[Math.floor(Math.random() * colors.length)];
 
       const user = new User({
         name: args.name,
@@ -38,11 +38,6 @@ export default {
       });
 
       return user.save();
-    }
-  },
-  User: {
-    color: obj => {
-      return Color.find({ _id: obj.color });
     }
   }
 };
