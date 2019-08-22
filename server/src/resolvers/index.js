@@ -2,6 +2,11 @@ import User from '../models/User';
 import Color from '../models/Color';
 
 export default {
+  User: {
+    color: obj => {
+      return Color.findOne({ _id: obj.color });
+    }
+  },
   Query: {
     user: async (_, args) => {
       return User.findOne({ _id: args.id });
