@@ -1,0 +1,6 @@
+mutation CreateColor($value: String!) {
+  createColor(value: $value) {
+    id
+    value
+  }
+}

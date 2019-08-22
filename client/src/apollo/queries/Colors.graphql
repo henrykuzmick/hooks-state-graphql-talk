@@ -1,0 +1,6 @@
+query Colors {
+  colors {
+    id
+    value
+  }
+}

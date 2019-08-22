@@ -6,7 +6,7 @@ const USERS = loader('../apollo/queries/Users.graphql');
 export const useUsers = () => {
   const usersQuery = useQuery(USERS);
 
-  const users = usersQuery.data ? usersQuery.data : null;
+  const users = usersQuery.data && usersQuery.data.users ? usersQuery.data.users : null;
 
   return { users };
 };
