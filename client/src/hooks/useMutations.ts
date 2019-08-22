@@ -8,7 +8,8 @@ import {
   CreateUserVariables,
   CreateColorVariables,
   Users,
-  Colors_colors
+  Colors_colors,
+  Colors
 } from '../../generated/schema';
 
 const usersQuery = loader('../apollo/queries/Users.graphql');
@@ -31,6 +32,18 @@ export const useMutations = () => {
           id: 'random-id',
           __typename: 'Color',
           value
+        }
+      },
+      update: (proxy, res) => {
+        if (!res.data || !res.data.createColor) {
+          return;
+        }
+
+        const data = proxy.readQuery<Colors>({ query: colorsQuery });
+
+        if (data) {
+          data.colors.push(res.data.createColor);
+          proxy.writeQuery({ query: colorsQuery, data });
         }
       }
     });
