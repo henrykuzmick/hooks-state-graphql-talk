@@ -1,0 +1,22 @@
+type User {
+  id: ID!
+  name: String!
+  color: Color!
+}
+
+type Color {
+  id: ID!
+  value: String!
+}
+
+type Query {
+  user(id: ID!): User!
+  color(id: ID!): Color!
+  users: [User!]!
+  colors: [Color!]!
+}
+
+type Mutation {
+  createUser(name: String!): User
+  createColor(value: String!): Color
+}
