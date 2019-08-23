@@ -7,6 +7,11 @@ export default {
       return Color.findOne({ _id: obj.color });
     }
   },
+  Color: {
+    users: obj => {
+      return User.find({ color: obj._id });
+    }
+  },
   Query: {
     user: async (_, args) => {
       return User.findOne({ _id: args.id });
