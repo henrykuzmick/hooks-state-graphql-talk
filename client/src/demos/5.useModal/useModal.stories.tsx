@@ -3,4 +3,4 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ModalApp } from './';
 
-storiesOf('Hooks', module).add('3. useModal', () => <ModalApp />);
+storiesOf('Hooks', module).add('5. useModal', () => <ModalApp />);
