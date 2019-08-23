@@ -1,11 +1,12 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider as OldApolloProvider } from 'react-apollo';
 
 import './App.css';
 import client from './apollo';
-import { UserList } from './UserList';
+import { UserList } from './UserListNoHooks';
 
-const App: React.FC = () => {
+export const App = () => {
   return (
     <ApolloProvider client={client}>
       <UserList />
@@ -13,4 +14,10 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export const AppNoHooks = () => {
+  return (
+    <OldApolloProvider client={client}>
+      <UserList />
+    </OldApolloProvider>
+  );
+};
