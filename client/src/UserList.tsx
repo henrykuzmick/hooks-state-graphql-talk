@@ -13,7 +13,7 @@ export const UserList = () => {
       return 'Loading...';
     }
 
-    return users.map(user => <p style={{ backgroundColor: user.color.value }}>{user.name}</p>);
+    return users.map(user => <p style={{ backgroundColor: user.color.value, color: 'white' }}>{user.name}</p>);
   };
 
   const createNewUser = () => {
